@@ -28,7 +28,6 @@ const Books = () => {
             showErrorToast("Please login to issue a book.");
             return;
         }
-           const url =Server_URL + 'borrow/request-issue/'+bookid;
            const response = await axios.post(`${Server_URL}books/borrow/request-issue/${bookid}`,{}, {
             headers: {
               Authorization: `Bearer ${authToken}`,

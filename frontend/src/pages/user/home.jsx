@@ -135,7 +135,7 @@ export default function Home() {
     <div key={index} className="category-card">
       <div className="category-img-container">
         <img 
-          src={cat.coverImage || "/images/default-subject.jpg"} 
+          src={cat.coverImage || "/assets/libraryinterior.jpg"} 
           alt={cat.category} 
           loading="lazy"
         />
@@ -171,7 +171,7 @@ export default function Home() {
         <div key={index} className="na-book-item">
           <div className="na-cover-wrapper">
             <img 
-              src={book.coverImage || "/images/default-book.jpg"} 
+              src={book.coverImage || "/assets/library.avif"} 
               alt={book.title} 
               className="na-cover-image"
               loading="lazy"
