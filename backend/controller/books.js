@@ -54,7 +54,7 @@ booksController.addNewBook = async (req, res) => {
     res.status(201).json({error:false , message: "Book added successfully", book: newBook });
   } catch (error) {
     console.log(error);
-    res.status(500).json({error:true, message: "Internal Server Error", error });
+    res.status(500).json({ error: true, message: error.message || "Internal Server Error" });
   }
 };
 
