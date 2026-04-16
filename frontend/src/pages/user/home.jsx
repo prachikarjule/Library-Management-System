@@ -10,8 +10,10 @@ export default function Home() {
   const [categories, setCategories] = useState([]);
   const [newArrivals, setNewArrivals] = useState([]);
   const [stats, setStats] = useState({
+    totalCategories: 0,
     totalBooks: 0,
     availableBooks: 0,
+    totalActiveStudents: 0,
     students: 0
   });
   const [loading, setLoading] = useState(true);
@@ -60,10 +62,10 @@ export default function Home() {
   try {
     setLoading(true);
     const { data } = await axios.get(Server_URL + "home");
-    if (!data.error) {
-      setStats(data.stats);
-      setCategories(data.categories);
-      setNewArrivals(data.newArrivals);
+    if (data && !data.error) {
+      setStats(data.stats ?? {});
+      setCategories(data.categories ?? []);
+      setNewArrivals(data.newArrivals ?? []);
     }
   } catch (error) {
     console.error("Error fetching data:", error);
